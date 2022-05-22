@@ -66,6 +66,12 @@ The project is aimed to create news-reader app. My process is from design layout
 
 [News API](https://newsapi.org/docs/endpoints/top-headlines)
 
+## If I had more time, I could improve some points:
+
+• Responsive Design
+
+• [Image fallback](https://stackoverflow.com/questions/66949606/what-is-the-best-way-to-have-a-fallback-image-in-nextjs) - some of images can not fetch and it return null
+
 ### Demo
 
-You can see [News Reader]()
+You can see [News Reader](https://news-reader-nine.vercel.app)
