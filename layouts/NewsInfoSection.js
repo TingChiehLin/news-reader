@@ -8,9 +8,11 @@ const NewsInfoSection = ({ articles }) => {
           key={index}
           imgURL={article.urlToImage}
           title={article.title}
+          url={article.url}
           author={article.author}
           date={article.publishedAt}
           description={article.description}
+          source={article.source}
         />
       ))}
     </main>

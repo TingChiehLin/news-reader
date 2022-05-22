@@ -3,8 +3,9 @@ import NewsInfoSection from "../layouts/NewsInfoSection";
 
 import { getNewsData } from "../lib/news";
 
-export async function getServerSideProps() {
-  const newsData = await getNewsData();
+export async function getServerSideProps(context) {
+  const source = context.query.source;
+  const newsData = await getNewsData(source);
   return {
     props: { newsData },
   };

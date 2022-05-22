@@ -54,12 +54,17 @@ The project is aimed to create news-reader app. My process is from design layout
 
 3. Fill in your API Key. [Learn More](https://nextjs.org/docs/basic-features/environment-variables#loading-environment-variables)
 
-   `Create .env.local` file at your source root
+   `Create .env.local` file at your source root and then add
+
    `News_API=`Your API Key
 
 ## Start Server
 
 [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## News API Top-Headlines
+
+[News API](https://newsapi.org/docs/endpoints/top-headlines)
 
 ### Demo
 

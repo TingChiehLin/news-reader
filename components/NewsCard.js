@@ -1,34 +1,45 @@
 import Link from "next/link";
-const NewsCard = ({ imgURL, title, author, date, description }) => {
+const NewsCard = ({
+  imgURL,
+  title,
+  url,
+  author,
+  date,
+  description,
+  source,
+}) => {
+  const dateFormat = new Date(date).toLocaleDateString("en-US");
+
   return (
-    <div className=" flex items-start gap-6 mb-8 shadow rounded">
+    <div className="flex items-start gap-6 mb-8 shadow rounded">
       <img
         alt={author}
         src={imgURL}
         className="object-cover w-[300px] h-[300px] flex-2"
       />
-      <div className="flex-1">
-        <h1 className="font-bold">{title}</h1>
+      <div className="flex-1 flex items-start justify-between flex-col h-[300px]">
         <div>
-          <h3>{author}</h3>
-          <h3>{date}</h3>
+          <Link href={`${url}`}>
+            <a target={"_blank"} rel="noopener noreferrer">
+              <h1 className="font-bold text-2xl">{title}</h1>
+            </a>
+          </Link>
+          <div className="flex justify-start items-center text-gray-500 text-lg my-2">
+            {author && <h3 className="mr-2">{author + ","}</h3>}
+            <h3>{dateFormat}</h3>
+          </div>
+          <p className="text-base">{description}</p>
         </div>
-        <p>{description}</p>
-        <Link href={`/`}>
-          <a className="inline-block px-4 py-3 bg-orange-300 rounded">
-            <p className="font-bold">READ MORE</p>
-          </a>
-        </Link>
+        {source.id && (
+          <Link href={`/?source=${source.id}`}>
+            <a className="inline-block px-4 py-3 bg-orange-300 rounded mb-2">
+              <p className="font-bold">{source.name}</p>
+            </a>
+          </Link>
+        )}
       </div>
     </div>
   );
 };
 
 export default NewsCard;
-
-// - Main-Title: 56px
-// - Sub-Title: 28px
-// - News-Title: 24px
-// - News-Sub-Title: 20px
-// - Paragraph: 16px
-// - Sub-Paragraph: 12px
