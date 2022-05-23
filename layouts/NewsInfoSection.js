@@ -2,7 +2,7 @@ import NewsCard from "../components/NewsCard";
 
 const NewsInfoSection = ({ articles }) => {
   return (
-    <main className=" w-full h-full p-20">
+    <main className=" w-full h-full p-10 md:p-20">
       {articles.map((article, index) => (
         <NewsCard
           key={index}
